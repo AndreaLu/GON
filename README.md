@@ -8,7 +8,7 @@ The server side decides two ports to open (port1,port2). A command option can be
 The server side opens ports 8887 and 8888 and wants to receive gamepad input from the client:  
 ```python gon.py -s 8887,8888 --receive```  
 The client now connects to the server in send mode:  
-```python gon.py -s 127.0.0.1:8887,8888 --send```  
+```python gon.py -c 127.0.0.1:8887,8888 --send```  
 127.0.0.1 should be replaced with the server IP.
 ## Links
 - Thanks to tidzo who made a useful wrapper of vJoy for Python available [here](https://github.com/tidzo/pyvjoy)
