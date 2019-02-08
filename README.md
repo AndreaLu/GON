@@ -6,7 +6,7 @@ The host has to install vJoy drivers which enable gamepad input simulation. x360
 The server side decides two ports to open (port1,port2). A command option can be used to determine wether to have GON send/receive the gamepad controls to/from the other endpoint. This is totally independent on wether the endpoint is client or server.
 ### example
 The server side opens ports 8887 and 8888 and wants to receive gamepad input from the client:
-`python gon.py -s 8887,8888 --receive` 
+```python gon.py -s 8887,8888 --receive``` 
 The client now connects to the server in send mode:
-`python gon.py -s 127.0.0.1:8887,8888 --send`
+```python gon.py -s 127.0.0.1:8887,8888 --send``` 
 127.0.0.1 should be replaced with the server IP.
