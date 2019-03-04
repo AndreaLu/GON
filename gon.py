@@ -1,6 +1,6 @@
 import sys
 from netlib import Server, Client
-from joylib import JoyReader, JoyWriter
+from joylib import JoyReader
 # main.py [-s port1,port2]/[-c ip:port1,port2] --send/--receive
 
 def receiveProcedure(networkEndpoint):
@@ -60,6 +60,7 @@ else:
 if sys.argv[3] == "--send":
    sendProcedure(networkEndpoint)
 elif sys.argv[3] == "--receive":
+   from joylib import JoyWriter
    receiveProcedure(networkEndpoint) 
 else:
    print("last argument shuold be either --send or --receive")

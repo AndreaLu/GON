@@ -2,7 +2,6 @@ from pygame import joystick, event, display
 from pygame import QUIT, JOYAXISMOTION, JOYBALLMOTION, JOYHATMOTION, JOYBUTTONUP, JOYBUTTONDOWN
 from pygame import quit as pgQuit
 from threading import Thread
-import pyvjoy
 
 # vJoy constants **************************************************************
 BUTTON_A     = 1
@@ -19,12 +18,12 @@ AXIS_MAX  = int(65535/2)+1
 AXIS_REST = int(32767/2)+1
 AXIS_MIN  = 0
 
-AXIS_LX = pyvjoy.HID_USAGE_X   
-AXIS_LY = pyvjoy.HID_USAGE_Y	
-AXIS_LZ = pyvjoy.HID_USAGE_Z	
-AXIS_RX = pyvjoy.HID_USAGE_RX  
-AXIS_RY = pyvjoy.HID_USAGE_RY  
-AXIS_RZ = pyvjoy.HID_USAGE_RZ  
+AXIS_LX = 0x30   
+AXIS_LY = 0x31 
+AXIS_LZ = 0x32 
+AXIS_RX = 0x33 
+AXIS_RY = 0x34 
+AXIS_RZ = 0x35 
 
 BUTTON_UHAT = 20
 BUTTON_LHAT = 21
@@ -151,6 +150,7 @@ class JoyReader:
 class JoyWriter:
    '''Class to simulate gamepad input to the computer'''
    def __init__(self):
+      import pyvjoy
       self.jojo = pyvjoy.VJoyDevice(1)
 
    
